@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../static/styles/logo.png" type="image" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/styles/tailwind.min.css"
+    />
+    <title>About</title>
+  </head>
+  <body
+    class="flex tracking-wider text-center justify-center overflow-x-hidden items-center h-screen"
+    style="background-color: black; color: #f2ebe9"
+  >
+    <div
+      class="rounded-2xl sm:w-2/3 mx-20 hover:shadow-2xl transform duration-300"
+      style="background-color: transparent"
+    >
+      <div class="m-10 lg:mx-20">
+        <h1 class="text-3xl md:text-4xl lg:text-5xl mt-10 font-bold">
+          SECURE FILE STORAGE
+        </h1>
+        <h2 class="lg:text-lg">
+          Using Hybrid Cryptography
+        </h2>
+        <div style = "position:relative; left:40%; top:30px;">
+          <br /><img src="static/styles/logo.png" width="150px" height="150px" alt="logo"><br /></div>
+        <br /><br />
+        <!-- <h2 class="mt-12 text-center font-semibold text-3xl">`SUCCESSO`!</h2> -->
+        <div
+          class="h-64 overflow-y-scroll border border-white border-opacity-25 text-left px-3 sm:px-4 md:px-10 xl:px-20 mb-5 w-4/5 mx-auto"
+        >
+          <p class="mt-12 mb-5 mx-auto">
+            <strong>Aim:</strong> To secure user files through hybrid cryptography for cloud storage.<br /><br />
+            <strong>Approach:</strong>
+          </p>
+          <ol class="mb-5 list-decimal">
+            <li>Upload user file.</li>
+            <li>
+              Dividing an uploaded file into N parts depending on the fixed
+              block size.
+            </li>
+            <li>
+              The sub-files are encrypted using one of the selected
+              algorithms that rotate implementation with every part in round robin
+              fashion.
+            </li>
+            <li>
+              The keys for cryptography algorithms used are stored in a file and
+              then the resulting file is secured using a different cryptographic
+              algorithm. Key is available to the user as public key, for the
+              receiver to be able to access the file.
+            </li>
+          </ol>
+          <p>File Restoration:</p>
+          <br />
+          <ol class="mb-10 list-decimal">
+            <li>
+              Load the public key (.pem file) from sender.
+            </li>
+            <li>Validate and decrypt keys of the algorithms.</li>
+            <li>
+              Decrypt blocks of subfiles using the same algorithms 
+              used for encryption.
+            </li>
+            <li>
+              Combine all subfiles to form the original file and allow 
+              user download.
+            </li>
+          </ol>
+        </div>
+        <table class="w-full">
+          <tr class="flex justify-center">
+            <td>
+              <a href="/home"
+                ><button
+                  class="py-2 px-4 border transform duration-200 text-black hover:text-white hover:bg-transparent bg-gray-100 hover:-translate-y-1"
+                >
+                  Back to Home
+                </button></a
+              >
+            </td>
+          </tr>
+        </table>
+        <br />
+        <div class="flex-col mx-auto mt-5 text-center">
+          <h5>© 2023 Secure File Storage using Hybrid Cryptography. All rights reserved</h5>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
